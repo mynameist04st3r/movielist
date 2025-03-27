@@ -1,17 +1,18 @@
-const http = require('http');
+const port = 8080;
+const express = require('express');
+const app = express();
+const knex = require('knex');
 
-const server = http.createServer((req, res) => {
-  let url = req.url.split('/');
-  if (url[1] === '' ) {
-    if (req.method === 'GET') {
-      res.end("Hello, World");
-    }
-  }
-  res.statusCode = 404;
-  res.end();
+
+app.get('/', (req, res) => {
+  res.send('Here it is.');
+})
+app.get('/movies', (req, res) => {
+  knex('movies').select('*').then(movies => {
+    res.json(movies)
+  })
 });
 
-server.listen(3000, "localhost", () => {
-  const addr = server.address();
-  console.log(`Server running at http://${addr.address}:${addr.port}`)
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`)
 });
