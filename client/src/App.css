@@ -4,3 +4,20 @@
   padding: 2rem;
   text-align: center;
 }
+
+body {
+  background-color: #1e1e1e;
+  color: rgb(0, 200, 200);
+}
+
+.movies-container-app {
+  border-radius: 20px;
+  border: 1px solid rgb(0, 200, 200);
+  width: 130%;
+}
+
+.movies-list-container-app {
+  width: 70%;
+  border-top: 1px solid rgba(0, 200, 200, 0.4);
+  padding-top: 20px;
+}

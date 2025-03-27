@@ -12,12 +12,14 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="movies-container-app">
         <h1>Movies</h1>
         <ul>
-          {movies.map((movie) => (
-            <li key={movie.title}>{movie.title}</li>
-          ))}
+          <div className="movies-list-container-app">
+            {movies.map((movie) => (
+              <li key={movie.title}>{movie.title}</li>
+            ))}
+          </div>
         </ul>
       </div>
     </>
